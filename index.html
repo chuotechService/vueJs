@@ -12,7 +12,18 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-      let app = Vue.createApp({})
+      
+      // the object inside is an options object
+      let app = Vue.createApp({
+        data: function (){
+          return {
+            greeting: 'Hello Vue 3!'
+          }
+        }
+
+      })
+
+      // mount application somewhere on the html (#app)
       app.mount("#app")
 
     </script>
