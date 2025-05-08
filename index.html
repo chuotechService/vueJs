@@ -12,7 +12,11 @@
 
     <!-- directives connect html elements with the vue javascript -->
      <br>
-     <input type="text">
+     <!-- v-model directive allows you to get the input value below -->
+      <!-- vue will bind v-model to whatever variable we pass link to the attribute -->
+      <!-- Because it's two way binding - it wil use the initial greeting variable but now it can be changed by input  -->
+      <!-- as a result the greeting above is now controlled by the model -->
+      <input v-model="greeting" type="text">
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
