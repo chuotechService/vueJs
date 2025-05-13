@@ -7,30 +7,33 @@
     <style>
       .box {
         width: 200px;
-        height: 200px ;
-        background-color: purple; 
+        height: 200px;
+        
       }
-
-      .box-two {}
-      .box-three {}
+      .box-one { background-color: purple; }
+      .box-two {
+        background-color: yellow;
+      }
+      .box-three {
+        background-color: pink;
+      }
     </style>
   </head>
   <body>
-
     <div id="app">
-        {{greeting}}
+      {{greeting}}
 
-    <!-- directives connect html elements with the vue javascript -->
-     <br>
-     <!-- v-model directive allows you to get the input value below -->
+      <!-- directives connect html elements with the vue javascript -->
+      <br />
+      <!-- v-model directive allows you to get the input value below -->
       <!-- vue will bind v-model to whatever variable we pass link to the attribute -->
       <!-- Because it's two way binding - it wil use the initial greeting variable but now it can be changed by input  -->
       <!-- as a result the greeting above is now controlled by the model -->
-      <input v-model="greeting" type="text">
+      <input v-model="greeting" type="text" />
 
-      <hr>
+      <hr />
       <!-- v-if is like an if statement if value of the variable is truthy the entire element is shown and vice-versa -->
-      <div v-if="isVisible" class="box"></div>
+      <div v-if="isVisible" class="box box-one"></div>
       <div v-else-if="isVisible2" class="box box-two"></div>
       <div v-else class="box box-three"></div>
       <!-- v-show is similar to v-if and takes a boolean variable - when it's false the div will be rendered to the dom but it won't be visible - with v-if the div won't be rendered at all -->
@@ -38,22 +41,19 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-      
       // the object inside is an options object
       let app = Vue.createApp({
-        data: function (){
+        data: function () {
           return {
-            greeting: 'Hello Vue 3!',
+            greeting: "Hello Vue 3!",
             isVisible: false,
-            isVisible2: false
-          }
-        }
-
-      })
+            isVisible2: true,
+          };
+        },
+      });
 
       // mount application somewhere on the html (#app)
-      app.mount("#app")
-
+      app.mount("#app");
     </script>
   </body>
 </html>
