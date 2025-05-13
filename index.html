@@ -87,13 +87,15 @@
 
         data() {
           return {
-            title: 'Login Form'
+            title: 'Login Form',
+            email: '',
+            password: ''
           }
         },
 
         methods: {
           handleSubmit() {
-            console.log("submitted")
+            console.log(this.email, this.password);
           }
         }
       });
