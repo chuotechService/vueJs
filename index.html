@@ -77,7 +77,7 @@
 
       app.component("login-form", {
         template: `
-          <form>
+          <form @submit="handleSubmit">
             <h1>{{ title }}</h1>
             <input type = "email" />
             <input type = "password" />
