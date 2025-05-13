@@ -26,7 +26,9 @@
   </head>
   <body>
     <div id="app" v-cloak>
-      {{greeting}}
+    <custom-form></custom-form>
+
+
 
       <!-- directives connect html elements with the vue javascript -->
       <br />
@@ -34,7 +36,7 @@
       <!-- vue will bind v-model to whatever variable we pass link to the attribute -->
       <!-- Because it's two way binding - it wil use the initial greeting variable but now it can be changed by input  -->
       <!-- as a result the greeting above is now controlled by the model -->
-      <input @keyup.enter="greet" v-model="greeting" type="text" />
+      <input @keyup.enter="greet(greeting + '!!!!!')" v-model="greeting" type="text" />
 
       <hr />
       <button v-on:click="isVisible = !isVisible">Toggle Box </button>
@@ -61,8 +63,8 @@
             toggleBox() {
               this.isVisible = !this.isVisible; 
             },
-            greet() {
-              console.log(this.greeting)
+            greet(greeting) {
+              console.log(greeting);
             }
         }
       });
